@@ -1,0 +1,78 @@
+
+.doctor-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+}
+.doctos-card{
+    background-color: white;
+    width: 23.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+.doctos-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Header (Image) */
+.doctor-header img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Doctor Info */
+.doctor h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.speciality {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Stats Section */
+.doctor-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.stat p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.stat small {
+    color: #777;
+}
+
+/* Button */
+.view {
+    background: #0D2B37;
+    color: #fff;
+    padding: 0.5rem;
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-left: 0rem;
+}
+
+.view:hover {
+    background: #16475a;
+}
+
+@media (max-width: 768px) {
+    .doctor-list {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,59 @@
+.contact {
+    display: flex;
+}
+
+.img {
+    width: 30%;
+    margin-left: 10rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.img img {
+    width: 100%;
+    object-fit: cover;
+    height: 40rem;
+    border-radius: 0.5rem;
+}
+
+.form {
+    width: 30%;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 5px 1px #333;
+    border-radius: 1rem;
+    margin-left: 15rem;
+    height: 40rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form input {
+    width: 20rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 0.15rem solid #0D2B37;
+}
+.form h3{
+    color: #0D2B37;
+    margin: 2rem;
+}
+.form textarea {
+    width: 20rem;
+    height: 5.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 0.15rem solid #0D2B37;
+}
+label{
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    margin-left: -16rem;
+}
+.form button{
+    border-radius: 0.5rem;
+    width: 10rem;
+    margin: 1rem;
+}

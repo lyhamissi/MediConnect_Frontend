@@ -1,0 +1,83 @@
+.hero-about {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero-about img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(13, 43, 55, 0.6);
+    padding: 17rem;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.about-text h3 {
+    font-size: 3rem;
+    margin-top: -7rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.about-text h5 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.966);
+}
+.mis{
+    color: #0D2B37;
+    text-align: center;
+    font-size:2.5rem ;
+    margin: 2rem;
+}
+.missions{
+    display: grid;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+}
+.missionsss{
+    display: flex;
+}
+
+.mission{
+    display: flex;
+    margin-left: 10rem;
+}
+.icontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #458441;
+}
+.miss{
+    color: white;
+    font-size: 1.5rem;
+}
+.mission p{
+    -webkit-text-fill-color: #0D2B37;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    margin-bottom: 1.8rem;
+}
+span{
+    font-weight: bold;
+    font-size: 2rem;
+}

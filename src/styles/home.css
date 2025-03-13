@@ -1,0 +1,111 @@
+.hero{
+    background-color: #0d2b37f6;
+    display: flex;
+}
+.content{
+    margin-left: 20rem;
+    margin-top: 3rem;
+}
+.content h3{
+    color: white;
+    text-align: left;
+    font-size: 3rem;
+}
+.content h5{
+    color: rgba(255, 255, 255, 0.863);
+    font-size: 1.3rem;
+    text-align: left;
+    margin-left: -5rem;
+    margin-top: 1rem;
+    font-weight: 540;
+}
+button{
+    background-color: #458441;
+    border: none;
+    text-align: center;
+    width: 15rem;
+    padding: 1rem;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 5rem;
+    margin-top: 5rem;
+    margin-left: 5rem;
+}
+
+.lined-text {
+    display: flex;
+    align-items: center;
+    color: #0D2B37;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.lined-texts{
+    display: flex;
+    align-items: center;
+    color: #0D2B37;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem;
+    flex-wrap: wrap;
+}
+h5{
+    color: #0D2B37;
+    text-align: center;
+    font-size: 1.5rem;
+    justify-content: center;
+}
+.lined-text::before,
+.lined-text::after {
+    content: "";
+    width: 15rem;
+    height: 0.3rem;
+    background-color: #0D2B37;
+    margin: 2rem;
+    border-radius: 0.5rem;
+
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 2.5rem;
+}
+
+.card {
+    background-color: #0D2B37;
+    border: 0.01rem solid #e0e0e0;
+    border-radius: 1rem;
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 19rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    margin-bottom: 2rem;
+}
+.top{
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+.text h4{
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.text p{
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.897);
+    text-align: center;
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+}

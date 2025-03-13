@@ -1,0 +1,94 @@
+.footers {
+    background-color: #0D2B37;
+    color: white;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer1 {
+    flex: 1;
+    max-width: 30rem;
+    margin-left: 9rem;
+}
+
+.about {
+    -webkit-text-fill-color: white;
+    text-align: center;
+    margin-left: -13rem;
+}
+
+.footer1 h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+}
+
+li {
+    list-style: none;
+    font-size: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 0.6rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    line-height: 1.5;
+}
+
+ li:hover {
+    color: rgba(196, 255, 87, 0.623);
+}
+
+.copyright {
+    display: flex;
+    margin-left: 10rem;
+}
+h6{
+    font-size: 1rem;
+}
+.copyright h2{
+    margin-left: 64rem;
+}
+.contact {
+    display: flex;
+    margin-left: 1rem;
+}
+
+.contact li {
+    font-size: 1.2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.location {
+    color: #458441;
+    font-size: 1.5rem;
+}
+.signup{
+    width: 9rem;
+    padding: 0.85rem;
+    border-radius: 0.5rem;
+    background-color: #458441;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.signup:hover{
+    background-color: #458441e7;
+    color: white;
+}
