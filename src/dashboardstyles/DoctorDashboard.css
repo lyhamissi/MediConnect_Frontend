@@ -112,7 +112,17 @@ p {
 .speciality ul li {
     margin: 8px 0;
 }
-
+body.dark-theme .specialty,
+body.dark-theme .notific,
+body.dark-theme .messages,
+body.dark-theme .profile-card{
+    background-color: #181818;
+    box-shadow: 0 0 5px rgb(80, 80, 80);
+    color: white  ;
+}
+body.dark-theme .profile-card .profile-content h2{
+    -webkit-text-fill-color: white;
+}
 @media (max-width: 768px) {
     .dashboard-container {
         grid-template-columns: 1fr;

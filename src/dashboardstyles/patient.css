@@ -4,11 +4,14 @@
     gap: 2rem;
     padding: 2rem;
     background: #f4f6f9;
+    width: 94%;
+    margin-top: 0rem;
+    height: auto;
 }
 
 .patient-info-card {
-    background: #0D2B37;
-    color: white;
+    background: #ffffff;
+    color: #0D2B37;
     padding: 2rem;
     border-radius: 0.5rem;
     text-align: center;
@@ -30,7 +33,7 @@
     /* color: white; */
 /* } */
 .reminder-alarm {
-    margin-top: 10px;
+    margin-top: 2rem;
     background: #144355;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -58,42 +61,64 @@
     margin-left: 0rem;
 }
 .notif {
-    background: #0D2B37;
+    background: #ffffff;
     padding: 2rem;
     border-radius: 0.5rem;
 }
 .notif h3{
-    color: white;
+    color: #0D2B37;
     font-size: 1.5rem;
     text-align: center;
     margin-left: 0rem;
 }
 .notif li{
-    color: #dfdede;
+    color: #0D2B37;
     margin-bottom: -1rem;
 }
 .health-info {
-    background: #0D2B37;
-    color: white;
+    background: #ffffff;
+    color: #0D2B37;
     padding: 2rem;
     border-radius: 10px;
 }
 .health-info p{
-    color: white;
+    color: #0D2B37;
 }
 .health-info h3, .regular-checkups h3{
-    color: white;
+    color: #0D2B37;
     font-size: 1.5rem;
     text-align: center;
     margin-left: 0rem;
     margin-bottom: 1rem;
 }
 .regular-checkups {
-    background: #0d2b37;
-    color: white;
+    background: white;
+    color: #0D2B37;
     padding: 2rem;
     border-radius: 10px;
 }
 .regular-checkups p{
+    color: #0D2B37;
+}
+.patient-vitals, .patient-activities{
+    background: white;
+    color: #0D2B37;
+    padding: 2rem;
+    border-radius: 10px;
+}
+.patient-vitals h3, .patient-activities h3{
+    color: #0D2B37;
+}
+body.dark-theme .patient-info-card,
+body.dark-theme .regular-checkups,
+body.dark-theme .health-info,
+body.dark-theme .notif,
+body.dark-theme .chart-section,
+body.dark-theme .patient-vitals,
+body.dark-theme .patient-activities,
+body.dark-theme .dashboard-container{
+    background-color: #181818;
+    box-shadow: 0 0 5px rgb(80, 80, 80);
+    border: 0.1rem solid white;
     color: white;
 }

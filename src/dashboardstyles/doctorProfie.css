@@ -1,0 +1,75 @@
+.doctor-profile{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background: #f4f6f9;
+    width: 94%;
+    margin-top: 0rem;
+    height: auto;
+}
+.doctor-profile .content{
+    margin-left: 5rem;
+}
+.doctor-profile .content h1{
+    color: #0D2B37;
+    font-size: 2rem;
+}
+.doctor-profile .content .desc{
+    font-size: 1rem;
+}
+.doctor-profile .content .desc span{
+    font-size: 1rem;
+    color: black;
+}
+.doctor-profile .content p{
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+.doctor-profile .content .email{
+    font-size: 1.1rem;
+    color: #0D2B37;
+    text-decoration: none;
+    cursor: pointer;
+}
+.doctor-profile .content .email span{
+    font-size: 1.2rem;
+    color: #0D2B37;
+}
+.specialiity{
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    height: auto;
+}
+.specialiity h1{
+    color: #0D2B37;
+}
+.specialiity li{
+    color: black;
+    font-weight: lighter;
+}
+strong{
+    color: #0D2B37;
+}
+.specialiity .info li{
+    margin-top: 0rem;
+    margin-bottom: -0.5rem;
+}
+body.light-theme .specialiity{
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+body.dark-theme .doctor-profile, .specialiity{
+    background-color: #181818;
+    box-shadow: 0 0 5px rgb(80, 80, 80);
+  color: white  ;
+}
+body.dark-theme .doctor-profile .specialiity h1,
+body.dark-theme .doctor-profile .specialiity strong,
+body.dark-theme .doctor-profile .profile-body h2{
+    color: white;
+}

@@ -1,0 +1,71 @@
+.table-section {
+  margin-top: 2rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  margin-bottom: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 40rem;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  justify-content: left;
+  color: #0D2B37;
+}
+
+th {
+  background: #f0f0f0;
+}
+
+tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.edit {
+  color: rgba(0, 0, 255, 0.685);
+  cursor: pointer;
+}
+
+.delete {
+  color: rgba(255, 0, 0, 0.685);
+  cursor: pointer;
+}
+body.dark-theme .table-section {
+  background-color: #181818;
+  box-shadow: 0 0 5px rgb(80, 80, 80);
+}
+
+body.dark-theme th {
+  background-color: #24232394;
+  color: white;
+}
+
+body.light-theme td body.light-theme td {
+  padding: 0.75rem;
+  text-align: left;
+  justify-content: left;
+  color: gray;
+  background: #f0f0f0;
+}
+
+body.dark-theme tbody tr:nth-child(even) {
+  background-color:#0e0d0dc2 ;
+  color: white;
+}

@@ -1,20 +1,20 @@
 import React from 'react'
 import "../dashboardstyles/DoctorCard.css";
 import { useNavigate } from 'react-router-dom';
-const DoctorCard = ({getdoctor}) =>{
-    const navigation = useNavigate();
-    const handleNavigate = (_id) => {
-        navigation(`/all-doctors/doctor_profile/${_id}`);
-    }
-    return (
-        <div >
-            <div className="doctos-card">
+const NurseCard = ({getnurse}) => {
+  const navigation = useNavigate();
+   const handleNavigate = (_id) =>{
+    navigation(`/all-nurses/nurse-profile/${_id}`);
+   }
+  return (
+    <div>
+      <div className="doctos-card">
             <div className="doctor-header">
-                <img src={getdoctor.profileImage} alt={getdoctor.userName} />
+                <img src={getnurse.profileImage} alt={getnurse.userName} />
             </div>
             <div className="doctor-info">
-                <h3>{getdoctor.userName}</h3>
-                <p className="speciality">{getdoctor.Speciality}</p>
+                <h3>{getnurse.userName}</h3>
+                <p className="speciality">{getnurse.Speciality}</p>
             </div>
             <div className="doctor-stats">
                 {/* <div className="stat">
@@ -22,7 +22,7 @@ const DoctorCard = ({getdoctor}) =>{
                     <small>Patient</small>
                 </div> */}
                 <div className="stat">
-                    <p>{getdoctor.userAge} yrs</p>
+                    <p>{getnurse.userAge} yrs</p>
                     <small>Doc age</small>
                 </div>
                 {/* <div className="stat">
@@ -30,10 +30,10 @@ const DoctorCard = ({getdoctor}) =>{
                     <small>Points</small>
                 </div> */}
             </div>
-            <button className="view" onClick={() => handleNavigate(getdoctor._id)}>View Profile</button>
+            <button className="view" onClick={() => handleNavigate(getnurse._id)}>View Profile</button>
         </div>
-        </div>
-    )
+    </div>
+  )
 }
 
-export default DoctorCard
+export default NurseCard

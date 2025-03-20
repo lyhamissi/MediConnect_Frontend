@@ -22,7 +22,7 @@ const Patientsidebar = () => {
           </button>
         </div>
         <ul>
-          <Link to="#" className='nav-link'><li><FaHeartbeat className='nav-icon' /> Patient Profile</li></Link>
+          <Link to="patient-pro" className='nav-link'><li><FaHeartbeat className='nav-icon' /> Your Profile</li></Link>
         <li onClick={() => setIsEventMenuOpen(!isEventMenuOpen)}>
           <FaCalendarCheck className='nav-icon' /> Appointment
           {isEventMenuOpen ? <MdArrowDropDown className='submenu-icon' /> : <MdArrowRight className='submenu-icon' />}

@@ -16,6 +16,19 @@ import DoctorProfile from './Components/DoctorProfile'
 import PatientDashboard from './Components/PatientDashboard'
 import PatientLayout from './PatientDashboard/PatientLayout'
 import NurseLayout from './NurseDasboard/NurseLayout'
+import AddNurse from './Components/AddNurse'
+import AllNurses from './Components/AllNurses'
+import NurseProfile from './Components/NurseProfile'
+import DoctorLayout from './DoctorDashboard/DoctorLayout'
+import AddPatient from './DoctorDashboard/AddPatient'
+import AllPatients from './Components/AllPatients'
+import Patient from './PatientDashboard/Patient'
+import DoctorTable from './Components/DoctorTable'
+import EditDoctorForm from './Components/EditDoctorForm'
+import NurseTable from './Components/NurseTable'
+import PatientProfile from './PatientDashboard/PatientProfile'
+import PatientPro from './PatientDashboard/PatientPro'
+import PatientTable from './DoctorDashboard/PatientTable'
 function App() {
 
   return (
@@ -30,19 +43,35 @@ function App() {
             <Route path='/patient-dashboard' element={<PatientDashboard />} />
             <Route path='/all-doctors' element={<AllDoctors />} />
             <Route path='/edit-doctor' element={<EditDoctor />} />
+            <Route path='/dashboard/edit-doctorform/:id' element={<EditDoctorForm/>}/>
             <Route path='/add-doctor' element={<AddDoctor />} />
-            <Route path='/doctor-profile' element={<DoctorProfile />} />
+            <Route path="/all-doctors/doctor_profile/:id" element={<DoctorProfile />} />
+            <Route path='/all-nurses' element={<AllNurses />} />
+            <Route path='/add-nurse' element={<AddNurse />} />
+            <Route path='/all-nurses/nurse-profile/:id' element={<NurseProfile />} />
+            < Route path='/nurse-doctor' element={<NurseTable/>}/>
+            <Route path='/all-patients' element={<AllPatients/>}/>
+            <Route path='/dashboard/patient-pro' element={<Patient/>}/>
+            <Route path='/doctor-view' element={<DoctorTable/>}/>
           </Route>
-          <Route path='/' element={<Layout />}>
-            <Route path='/home' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/contact' element={<Contact />} />
+          <Route path='/patient' element={<PatientLayout />}>
+            <Route path='/patient/patient-pro' element={<Patient/>}/>
+            <Route path='/patient/patient-profile' element={<PatientProfile/>}/>
+            <Route path='/patient/patientpro/:id' element={<PatientPro/>}/>
           </Route>
-          <Route path='/patient' element={<PatientLayout/>}>
-          
+          <Route path='/nurse' element={<NurseLayout />}>
+
           </Route>
-          <Route path='/nurse' element={<NurseLayout/>}>
-          
+          <Route path='/' element={<DoctorLayout />}>
+            <Route path='/doctor' element={<DoctorDashboard/>}/>
+            <Route path='/doctor/add-patient' element={<AddPatient />} />
+            <Route path='/doctor/all-patients' element={<AllPatients/>}/>
+            <Route path='/doctor/patient-pro' element={<Patient/>}/>
+            <Route path='/doctor/patient-profile/:id' element={<PatientProfile/>}/>
+            <Route path='/patientpro/:patientId' element={<PatientPro/>}/>
+            <Route path='/doctor/edit-patient' element={<PatientTable/>}/>
+            <Route path='/doctor/all-nurses' element={<AllNurses />} />
+           < Route path='/doctor/nurse-doctor' element={<NurseTable/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
