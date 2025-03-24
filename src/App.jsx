@@ -54,7 +54,7 @@ function App() {
             <Route path="/all-doctors/doctor_profile/:id" element={<DoctorProfile />} />
             <Route path='/all-nurses' element={<AllNurses />} />
             <Route path='/add-nurse' element={<AddNurse />} />
-            <Route path='/nurse-profile/:id' element={<NurseProfile />} />
+            <Route path='dashboard/nurse-profile/:id' element={<NurseProfile />} />
             < Route path='/nurse-doctor' element={<NurseTable/>}/>
             <Route path='/all-patients' element={<AllPatients/>}/>
             <Route path='/doctor-view' element={<DoctorTable/>}/>

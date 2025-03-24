@@ -30,7 +30,7 @@ const DoctorNavbar = () => {
             <button className="theme-toggle" onClick={toggleTheme}>
                 {isDarkTheme ? <IoMdSunny /> : <LuMoonStar />}
             </button>
-            <MdNotifications className='notifications' />
+            {/* <MdNotifications className='notifications' /> */}
         </div>
     )
 }

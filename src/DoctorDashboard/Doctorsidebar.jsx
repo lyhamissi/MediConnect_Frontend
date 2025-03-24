@@ -36,7 +36,14 @@ const Doctorsidebar = () => {
             <Link to="/doctor/edit-patient" className='nav-link'><li>Edit Patient</li></Link>
             <Link to="/doctor/patient-pro" className='nav-link'><li>Patient Profile</li></Link>
           </ul>
-
+          <li onClick={() => setIsNursesMenuOpen(!isNursesMenuOpen)}>
+            <FaUserNurse className='nav-icon' /> Nurses
+            {isNursesMenuOpen ? <MdArrowDropDown className='submenu-icon' /> : <MdArrowRight className='submenu-icon' />}
+          </li>
+          <ul className={`submenu ${isNursesMenuOpen ? "open" : ""}`}>
+            <Link to="/doctor/all-nurses" className='nav-link'><li>All Nurses</li></Link>
+            <Link to="/doctor/nurse-profile/:id" className='nav-link'><li>Nurse Profile</li></Link>
+          </ul>
           {/* <li onClick={() => setIsNursesMenuOpen(!isNursesMenuOpen)}>
             <FaUserNurse className='nav-icon' /> Nurses
             {isNursesMenuOpen ? <MdArrowDropDown className='submenu-icon' /> : <MdArrowRight className='submenu-icon' />}

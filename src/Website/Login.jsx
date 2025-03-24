@@ -17,7 +17,7 @@ const Login = () => {
       });
 
       if (response.status === 200) {
-        Notify.success(<h6 style={{ fontSize: "1.5rem" }}>"Login Successful"</h6>);
+        Notify.success(<h6 style={{ fontSize: "1rem" }}>"Login Successful"</h6>);
         const userToken = response.data;
         localStorage.setItem("userToken", JSON.stringify(userToken));
         const role = userToken?.user?.userRole;
@@ -34,40 +34,40 @@ const Login = () => {
         }
         else navigate("/home");
       } else {
-        Notify.failure("Login failed. Please try again.");
+        Notify.failure(<h6 style={{ fontSize: "1rem" }}>"Login failed. Please try again."</h6>);
       }
     } catch (error) {
       console.log(error);
-      Notify.failure("An error occurred. Please try again.");
+      Notify.failure(<h6 style={{ fontSize: "1rem" }}>"An error occurred. Please try again."</h6>);
     }
   };
 
   return (
     <div className="login">
-    <div className="login-container">
-      {/* <div className="hero-section">
+      <div className="login-container">
+        {/* <div className="hero-section">
         <img src={heroimage} alt="Hero" />
       </div> */}
 
-      <div className="form-section">
-        <form onSubmit={handleSubmit(onsubmit)}>
-          <h2>Welcome Back!</h2>
+        <div className="form-section">
+          <form onSubmit={handleSubmit(onsubmit)}>
+            <h2>Welcome Back!</h2>
 
-          <label>Email*</label>
-          <input type="email" placeholder="Enter your email" {...register("userEmail", { required: true })} />
-          {errors.userEmail && <span className="error">Email is required</span>}
+            <label>Email*</label>
+            <input type="email" placeholder="Enter your email" {...register("userEmail", { required: true })} />
+            {errors.userEmail && <span className="error" style={{ fontSize: "1rem", color: "red" }}>Email is required</span>}
 
-          <label>Password*</label>
-          <input type="password" placeholder="Enter your password" {...register("userPassword", { required: true })} />
-          {errors.userPassword && <span className="error">Password is required</span>}
-          <button className="login-btn" type="submit">Login</button>
-          <div className="signup-link">
-            <p>Don't have an account?</p>
-            <Link to="/signup">Sign Up here!</Link>
-          </div>
-        </form>
+            <label>Password*</label>
+            <input type="password" placeholder="Enter your password" {...register("userPassword", { required: true })} />
+            {errors.userPassword && <span className="error" style={{ fontSize: "1rem", color: "red" }}>Password is required</span>}
+            <button className="login-btn" type="submit">Login</button>
+            <div className="signup-link">
+              <p>Don't have an account?</p>
+              <Link to="/signup">Sign Up here!</Link>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

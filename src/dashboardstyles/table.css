@@ -35,15 +35,16 @@ th {
 
 td {
   background-color: #dceaf8;
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: left;
   color: #0D2B37;
+  height: 2rem;
   border-bottom: 1px solid #e4e7ec;
   transition: background 0.3s ease;
 }
 td h5{
   font-size: 1rem;
-  margin-top: -2.5rem;
+  margin-top: -2rem;
   margin-left: 4rem;
   text-align: left;
 }
@@ -57,8 +58,9 @@ tbody tr:nth-child(even) td {
 }
 
 .profile-img {
-  width: 45px;
-  height: 45px;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: -0.5rem;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid #007BFF;
