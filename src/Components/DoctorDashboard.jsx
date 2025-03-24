@@ -9,7 +9,7 @@ const DoctorDashboard = () => {
   useEffect(() => {
     const getDoctor = async () => {
       try {
-        const response = await axios.get(`http://localhost:5001/user/getDoctorById/67da167dcebd3d3d7baed4cd`);
+        const response = await axios.get(`http://localhost:5001/user/getAllDoctors`);
         setDoctor(response.data);
       }
       catch (error) {
@@ -24,7 +24,7 @@ const DoctorDashboard = () => {
       <div className="profile-card">
         <div className="profile-header"></div>
         <div className="profile-body">
-          <img src={doctor.profileImage} alt="Doctor Profile" />
+          {/* <img src={doctor.profileImage} alt="Doctor Profile" /> */}
           <h2>{doctor.userName}</h2>
           <p className="expertise"><strong>{doctor.Speciality}</strong></p>
           <p className="description">

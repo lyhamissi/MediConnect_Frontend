@@ -99,7 +99,7 @@ const PatientProfile = () => {
       <div className="specialiity">
         <h1>Messages</h1>
         <div className="message-list">
-          <li style={{marginTop: "2rem"}}><strong>Dr.Caleb Hamissi: </strong> {patient.patientDescription}</li>
+          <li style={{marginTop: "2rem"}}><strong>{patient.doctorName} </strong> {patient.patientDescription}</li>
         </div>
       </div>
       {/* <div className="specialiity">

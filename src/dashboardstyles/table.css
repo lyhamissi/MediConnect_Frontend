@@ -1,52 +1,121 @@
+
 .table-section {
-  margin-top: 2rem;
-  background: white;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  width: 95%;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  width: 150vh;
   margin-bottom: 2rem;
+  margin-left: 3rem;
+  margin-top: 7rem;
+  transition: all 0.3s ease;
+}
+
+.table-section:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+  /* Add space between rows for a cleaner look */
   min-width: 40rem;
-}
-
-th,
-td {
-  padding: 0.75rem;
-  text-align: left;
-  justify-content: left;
-  color: #0D2B37;
+  border-radius: 0.5rem;
 }
 
 th {
-  background: #f0f0f0;
+  background: #007BFF;
+  /* Primary color header background */
+  color: #ffffff;
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
 }
 
-tbody tr:nth-child(even) {
-  background: #f9f9f9;
+td {
+  background-color: #dceaf8;
+  padding: 1rem;
+  text-align: left;
+  color: #0D2B37;
+  border-bottom: 1px solid #e4e7ec;
+  transition: background 0.3s ease;
+}
+td h5{
+  font-size: 1rem;
+  margin-top: -2.5rem;
+  margin-left: 4rem;
+  text-align: left;
+}
+tbody tr:hover td {
+  background-color: #eef4fc;
+  /* Subtle highlight on row hover */
+}
+
+tbody tr:nth-child(even) td {
+  background: #f4f6f8;
 }
 
 .profile-img {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   object-fit: cover;
-  margin-right: 10px;
-  border-radius: 5px;
+  border-radius: 50%;
+  border: 2px solid #007BFF;
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.1);
+}
+
+.edit,
+.delete {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .edit {
-  color: rgba(0, 0, 255, 0.685);
-  cursor: pointer;
+  color: #007BFF;
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.edit:hover {
+  background-color: #007BFF;
+  color: #fff;
 }
 
 .delete {
-  color: rgba(255, 0, 0, 0.685);
-  cursor: pointer;
+  color: #FF3B30;
+  background-color: rgba(255, 59, 48, 0.1);
+  margin-left: 0.5rem;
 }
+
+.delete:hover {
+  background-color: #FF3B30;
+  color: #fff;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+td .name-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+td .name-info span {
+  font-weight: 500;
+  color: #0D2B37;
+}
+
 body.dark-theme .table-section {
   background-color: #181818;
   box-shadow: 0 0 5px rgb(80, 80, 80);
@@ -57,15 +126,21 @@ body.dark-theme th {
   color: white;
 }
 
-body.light-theme td body.light-theme td {
+body.light-theme td {
   padding: 0.75rem;
   text-align: left;
   justify-content: left;
   color: gray;
   background: #f0f0f0;
 }
-
-body.dark-theme tbody tr:nth-child(even) {
-  background-color:#0e0d0dc2 ;
+body.dark-theme td{
+  background-color: #38383894;
   color: white;
+}
+body.dark-theme tbody tr:nth-child(even) td {
+  background-color: #50505094;
+  color: white;
+}
+body.dark-theme tbody tr:hover td{
+  background-color: #191e24;
 }

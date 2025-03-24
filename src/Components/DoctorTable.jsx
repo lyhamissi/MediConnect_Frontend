@@ -54,8 +54,8 @@ const DoctorTable = () => {
                             <tr key={doctor._id}>
                                 {/* <td>{doctor._id}</td> */}
                                 <td>
-                                    <img src={doctor.profileImage} alt={doctor.userName} className="profile-img" />
-                                    {doctor.userName}
+                                    <img src={doctor.profileImage} alt={doctor.userName} className="profile-img" />  
+                                    <h5>{doctor.userName}</h5>
                                 </td>
                                 <td>{doctor.Gender}</td>
                                 <td>{doctor.userAge}</td>

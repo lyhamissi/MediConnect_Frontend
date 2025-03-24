@@ -13,7 +13,7 @@ const AddPatient = () => {
 
   const onsubmit = async (data) => {
     try {
-      const { patientName,patientEmail,patientId,patientAge,patientGender,patientPhone,patientDisease,patientHeight,patientKgs,patientDescription} = data;
+      const { patientName,patientEmail,patientId,patientAge,patientGender,patientPhone ,patientHeight,patientKgs} = data;
       const formData = {
         patientName,
         patientEmail,
@@ -21,10 +21,8 @@ const AddPatient = () => {
         patientAge,
         patientGender,
         patientPhone,
-        patientDisease,
         patientHeight,
         patientKgs,
-        patientDescription,
       };
       const response = await axios.post(`http://localhost:5001/patient/patientRegister`, formData, {
         headers: {
@@ -58,21 +56,21 @@ const AddPatient = () => {
           <input type="email" placeholder='Email'name='patientEmail' {...register("patientEmail", {required: true})} />
           <label >National Id</label>
           <input type="text" placeholder='National Id'name='patientId' {...register("patientId", {required: true})} />
-          <label >Date Of Birth</label>
+          <label >Age</label>
           <input type="text" placeholder='Age' name='patientAge' {...register("patientAge", {required: true})}/>
           <label >Gender</label>
           <input type="text" placeholder='Gender' name='patientGender' {...register("patientGender", {required: true})}/>
           <label >Phone</label>
           <input type="text" placeholder='Phone Number'name='patientPhone' {...register("patientPhone", {required: true})} />
-          <label >Disease</label>
-          <input type="text" placeholder='Patient Disease' name='patientDisease' {...register("patientDisease", {required: true})}/>
+          {/* <label >Disease</label>
+          <input type="text" placeholder='Patient Disease' name='patientDisease' {...register("patientDisease", {required: true})}/> */}
           <label >Height</label>
           <input type="text" placeholder='Patient Height (Cm)'name='patientHeight' {...register("patientHeight", {required: true})} />
           <label >Weight</label>
           <input type="text" placeholder='Patient Weight (Kgs)' name='patientKgs' {...register("patientKgs", {required: true})}/>
-          <textarea  id="" placeholder='Notes for Patient include Medications given' name='patientDescription' {...register("patientDescription", {required: true})}></textarea> <br />
+          {/* <textarea  id="" placeholder='Notes for Patient include Medications given' name='patientDescription' {...register("patientDescription", {required: true})}></textarea> <br /> */}
           <button className='doctor-btn' type='submit'>Save</button>
-          <button type="reset" value="Cancel" className='cancel' >Cancel</button>
+          {/* <button type="reset" value="Cancel" className='cancel' >Cancel</button> */}
         </form>
       </div>
     </div>

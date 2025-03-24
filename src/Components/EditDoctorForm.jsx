@@ -65,7 +65,7 @@ const EditDoctorForm = () => {
       });
 
       alert('Doctor updated successfully!');
-      navigate('/'); // Redirect to doctor table page after successful update
+      navigate('/doctor-view'); // Redirect to doctor table page after successful update
     } catch (error) {
       console.log('Error updating doctor:', error);
       alert('Failed to update doctor');

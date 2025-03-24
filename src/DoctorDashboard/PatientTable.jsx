@@ -19,6 +19,20 @@ const PatientTable = () => {
         }
         getPatients();
     }, []);
+    const handleDelete = async(id) =>{
+        const confirmDelete = window.confirm("Are you sure you want to delete this patient?");
+        if (confirmDelete) {
+            try {
+                await axios.delete(`http://localhost:5001/patient/deletePatientById/${id}`);
+                // Refresh the list after deletion
+                setGetPatients(getpatients.filter((patient) => patient._id !== id));
+                alert("Patient deleted successfully");
+            } catch (error) {
+                console.error(error);
+                alert("Error deleting patient");
+            }
+        }
+    };
     return (
         <div>
             <div className="table-section">
@@ -30,7 +44,7 @@ const PatientTable = () => {
                             <th>Gender</th>
                             <th>Age</th>
                             <th>E-mail</th>
-                            <th>Disease</th>
+                            {/* <th>Disease</th> */}
                             <th colSpan={2}>Action</th>
                         </tr>
                     </thead>
@@ -42,14 +56,14 @@ const PatientTable = () => {
                                 <td>{patient.patientGender}</td>
                                 <td>{patient.patientAge}</td>
                                 <td>{patient.patientEmail}</td>
-                                <td>{patient.patientDisease}</td>
+                                {/* <td>{patient.patientDisease}</td> */}
                                 <td>
-                                    {/* <Link to={`/dashboard/edit-doctorform/${doctor._id}`}> */}
+                                    <Link to={`/doctor/edit-patientform/${patient._id}`}>
                                     <MdModeEdit className='edit' />
-                                    {/* </Link> */}
+                                    </Link>
                                 </td>
                                 <td><MdDelete className='delete'
-                                // onClick={() => handleDelete(doctor._id)} 
+                                onClick={() => handleDelete(patient._id)} 
                                 /></td>
                             </tr>
                         ))}

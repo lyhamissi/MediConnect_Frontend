@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import axios from 'axios';
-import heroimage from '../assets/hero image.jpg'
+import heroimage from '../assets/hospital.jpg'
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const Signup = () => {
         userEmail,
         userPassword,
       };
-      
+
       const response = await axios.post(`http://localhost:5001/user/register`, formData, {
         headers: {
           "Content-Type": "application/json"
@@ -33,39 +33,38 @@ const Signup = () => {
       if (response.status === 201) {
         Notify.success("Account Created Successfully");
         reset();
-        setTimeout(() => navigate("/login"), 1000); // Delay navigation for better UX
+        setTimeout(() => navigate("/login"), 1000);
       } else {
         Notify.failure("Signup failed. Please try again.");
-      } 
+      }
     }
     catch (error) {
       console.log(error);
-    Notify.failure("Something went wrong. Please try again.");
+      Notify.failure("Something went wrong. Please try again.");
     }
   }
   return (
-    <div className='signupform'>
-      <div className="herosignup">
+    <div className="login">
+    <div className='login-container'>
+      {/* <div className="hero-section">
         <img src={heroimage} alt="" />
-        <div className="contentsignup">
-        <h5 className='sign'>Sign Up to Get Started!!</h5>
-          <h3>"Revolutionizing Healthcare <br /> through Connected Medical <br /> Records"</h3>
-          <h5>...A secure platform that connects medical centers,<br /> ensuring patient health records are accessible <br /> anytime, anywhere...</h5>
-        </div>
-      </div>
-      <div className="login-form">
-        <h4 className='log'>Sign Up</h4>
+      </div> */}
+      <div className="form-section">
         <form action="" onSubmit={handleSubmit(onsubmit)}>
-        <label>Full Names*</label>
-        <input type="text" name='userName' {...register("userName", {required: true})}/>
-        <label>E-mail*</label>
-        <input type="email" name='userEmail' {...register("userEmail", {required: true})} />
-        <label>Password*</label>
-        <input type="password" name='userPassword' {...register("userPassword", {required: true})} />
-        <h6 className='login-link'>Already have an account?<Link to='/login' className='nav-link'><li>Login here!!</li></Link></h6>
-        <button className='btn' type='submit'>Sign Up</button>
-      </form>
+          <h2 >Sign Up</h2>
+          <label>Full Names*</label>
+          <input type="text"placeholder='Full Names*' name='userName' {...register("userName", { required: true })} />
+          <label>E-mail*</label>
+          <input type="email" placeholder='Enter Your Email' name='userEmail' {...register("userEmail", { required: true })} />
+          <label>Password*</label>
+          <input type="password" placeholder='Enter Password' name='userPassword' {...register("userPassword", { required: true })} />
+          <button className='login-btn' type='submit'>Sign Up</button>
+          <div className="signup-link">
+         <p> Already have an account?</p><Link to='/login'>Login here!!</Link>
+          </div>
+        </form>
       </div>
+    </div>
     </div>
   )
 }

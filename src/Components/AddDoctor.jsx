@@ -56,7 +56,7 @@ const AddDoctor = () => {
           <h2>Doctor info</h2>
           <label className='label'>Name</label>
           <input type="text" placeholder='Full Names' name='userName' {...register("userName", { required: true })} />
-          <label >Date Of Birth</label>
+          <label >Age</label>
           <input type="text" placeholder='Age' name='userAge' {...register("userAge", { required: true })} />
           <label >Gender</label>
           <input type="text" placeholder='Gender' name='Gender' {...register("Gender", { required: true })} />
@@ -64,7 +64,7 @@ const AddDoctor = () => {
           <input type="file" id="" placeholder='Plofile Image' name='profileImage' {...register("profileImage", { required: true })} />
           <label>Speciality </label>
           <input type="text" placeholder='Speciality' name='Speciality' {...register("Speciality", { required: true })} />
-          <label >phone</label>
+          <label >Phone</label>
           <input type="text" placeholder='Phone Number' name='phoneNumber' {...register("phoneNumber", { required: true })} />
           <label >Role</label>
           <input type="text" placeholder='Role' name='userRole' {...register("userRole", { required: true })} />
@@ -72,9 +72,10 @@ const AddDoctor = () => {
           <input type="email" placeholder='E-mail' name='userEmail' {...register("userEmail", { required: true })} />
           <label >Password</label>
           <input type="password" placeholder='Password' name='userPassword' {...register("userPassword", { required: true })} />
+          <label >Notes</label>
           <textarea name="userDescription" id="" placeholder=' Doctor Description' {...register("userDescription", { required: true })}></textarea>
           <button className='doctor-btn' type='submit'>Save</button>
-          <button type="reset" value="Cancel" className='cancel'  >Cancel</button>
+          {/* <button type="reset" value="Cancel" className='cancel'  >Cancel</button> */}
         </form>
       </div>
     </div>

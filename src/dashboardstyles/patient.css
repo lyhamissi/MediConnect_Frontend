@@ -1,114 +1,162 @@
+/* Dashboard Container */
 .dashboard-container {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr;
     gap: 2rem;
     padding: 2rem;
-    background: #f4f6f9;
+    background: #f8f9fa; /* Light Gray for background */
     width: 94%;
-    margin-top: 0rem;
+    margin-top: 2rem;
     height: auto;
 }
 
+/* Patient Info Card */
 .patient-info-card {
     background: #ffffff;
-    color: #0D2B37;
+    color: #0D2B37; /* Dark Gray for text */
     padding: 2rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
+.patient-info-card h2{
+    color: #007BFF;
+}
 .profile-pic {
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 50%;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+    border: 4px solid #007BFF; /* Blue border for profile picture */
 }
 
 .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 12px;
+    font-size: 1.1rem;
 }
-/* .vital-card{ */
-    /* color: white; */
-/* } */
+
+/* Reminder and Alarm */
 .reminder-alarm {
     margin-top: 2rem;
-    background: #144355;
-    padding: 1rem;
-    border-radius: 0.5rem;
+    background: #007BFF; /* Blue background */
+    padding: 0.9rem;
+    border-radius: 0.75rem;
     color: white;
     display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.reminder-alarm span{
+
+.reminder-alarm span {
     font-weight: bold;
-    font-size: 1rem;
-    margin-left: 2rem;
+    font-size: 1.1rem;
 }
-.alarm{
-    font-size: 2.5rem;
+
+.alarm {
+    font-size: 2rem;
     text-align: center;
+    margin-right: 1.5rem;
 }
+
+/* Chart Section */
 .chart-section {
-    background: white;
+    background: #ffffff;
     padding: 2rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.chart-section h3{
-    color: #0D2B37;
+
+.chart-section h3 {
+    color: #007BFF; /* Dark Gray */
     text-align: center;
-    font-size: 1.5rem;
-    margin-left: 0rem;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
 }
+
+/* Notification Section */
 .notif {
     background: #ffffff;
     padding: 2rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.notif h3{
-    color: #0D2B37;
-    font-size: 1.5rem;
+
+.notif h3 {
+    color: #007BFF; /* Dark Gray */
+    font-size: 1.6rem;
     text-align: center;
-    margin-left: 0rem;
+    margin-bottom: 1.5rem;
 }
-.notif li{
-    color: #0D2B37;
-    margin-bottom: -1rem;
+
+.notif li {
+    color: #0D2B37; /* Dark Gray */
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
 }
+
+/* Health Info */
 .health-info {
     background: #ffffff;
-    color: #0D2B37;
+    color: #007BFF; /* Dark Gray */
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.health-info p{
-    color: #0D2B37;
+
+.health-info p {
+    color: #0D2B37; /* Dark Gray */
+    font-size: 1.1rem;
 }
-.health-info h3, .regular-checkups h3{
-    color: #0D2B37;
-    font-size: 1.5rem;
+
+.health-info h3 {
+    color: #007BFF; /* Dark Gray */
+    font-size: 1.6rem;
     text-align: center;
-    margin-left: 0rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
+
+/* Regular Checkups */
 .regular-checkups {
-    background: white;
-    color: #0D2B37;
+    background: #ffffff;
+    color: #007BFF; /* Dark Gray */
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.regular-checkups p{
-    color: #0D2B37;
+
+.regular-checkups p {
+    color: #0D2B37; /* Dark Gray */
+    font-size: 1.1rem;
 }
-.patient-vitals, .patient-activities{
-    background: white;
-    color: #0D2B37;
+
+.regular-checkups h3 {
+    color: #007BFF; /* Dark Gray */
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Patient Vitals & Activities */
+.patient-vitals,
+.patient-activities {
+    background: #ffffff;
+    color: #0D2B37; /* Dark Gray */
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.patient-vitals h3, .patient-activities h3{
-    color: #0D2B37;
+
+.patient-vitals h3,
+.patient-activities h3 {
+    color: #007BFF; /* Dark Gray */
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
+
 body.dark-theme .patient-info-card,
 body.dark-theme .regular-checkups,
 body.dark-theme .health-info,

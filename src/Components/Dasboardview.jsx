@@ -76,7 +76,7 @@ const Dasboardview = () => {
     fetchPatientCount();
   },[]);
   return (
-    <div>
+    <div className='dash'>
       <div className="widgets">
         <div className="widget">
           <div className="top">
@@ -168,7 +168,7 @@ const Dasboardview = () => {
         </section>
 
       </div>
-      <div className="sec-widgets">
+      {/* <div className="sec-widgets">
         <div className="card-modal">
           <div className="top-part">
             <h4>Recent Visits</h4>
@@ -199,7 +199,7 @@ const Dasboardview = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

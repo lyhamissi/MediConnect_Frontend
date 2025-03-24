@@ -1,65 +1,118 @@
-
+/* Doctor List Container */
 .doctor-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
+    width: 150vh;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin-left: 3rem;
+    margin-top: 7rem;
+    justify-content: center; /* Center the doctor cards */
+    background-color: #f4f6f9; /* Light background to contrast the cards */
 }
-.doctos-card{
+
+/* Doctor Card Styling */
+.doctos-card {
     background-color: white;
-    width: 23.5rem;
-    padding: 1rem;
+    width: 20rem; /* Adjust width for better spacing */
+    padding: 1.5rem;
     cursor: pointer;
     text-align: center;
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
 }
+
+/* Hover Effect for Doctor Cards */
 .doctos-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px); /* Lift the card slightly */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow effect */
 }
+
+/* Doctor Header (Image) */
 .doctor-header img {
-    width: 5rem;
-    height: 5rem;
+    width: 6rem; /* Slightly larger image */
+    height: 6rem;
     border-radius: 50%;
     object-fit: cover;
+    border: 3px solid #007BFF; /* Blue border around the image */
 }
+
+/* Doctor Name Styling */
 .doctor h3 {
-    margin: 10px 0;
-    color: #333;
+    margin: 12px 0;
+    color: #0D2B37; /* Dark text color */
+    font-size: 1.25rem;
+    font-weight: 600; /* Bold name for prominence */
 }
+
+/* Speciality Text */
 .speciality {
     color: #777;
     font-size: 14px;
+    font-style: italic; /* Make it stand out more */
 }
+
+/* Doctor Stats Section */
 .doctor-stats {
     display: flex;
-    justify-content: space-around;
-    margin-top: 15px;
+    justify-content: space-between;
+    margin-top: 1rem;
     background: #f8f9fa;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for stats */
+    /* text-align: center; */
+    justify-content: center;
 }
+.doctor-statss{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+/* Individual Stat Styling */
+.stat {
+    text-align: center;
+}
+
 .stat p {
-    font-weight: bold;
+    font-weight: 700; /* Bolder stat values */
     margin: 0;
+    font-size: 1.1rem; /* Slightly larger font for stats */
 }
+
 .stat small {
     color: #777;
+    font-size: 0.875rem; 
 }
+
+/* View Button Styling */
 .view {
-    background: #0D2B37;
+    background: #007BFF; /* Primary Blue */
     color: #fff;
-    padding: 0.5rem;
-    width: 70%;
+    padding: 0.8rem;
+    width: 50%; /* Increased button width */
     border: none;
-    border-radius: 5px;
+    border-radius: 0.5rem; /* Rounded button */
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     margin-left: 0rem;
+    transition: background 0.3s ease; /* Smooth background transition */
 }
+
+/* View Button Hover Effect */
 .view:hover {
-    background: #16475a;
+    background: #136fd1; /* Darker blue for hover */
 }
+
 body.dark-theme .doctos-card,
-body.dark-theme .doctor-stats{
+body.dark-theme .doctor-stats,
+body.dark-theme .doctor-list,
+body.dark-theme .doctor-statss{
     background-color: #181818;
     box-shadow: 0 0 5px rgb(80, 80, 80);
     border: 0.1rem solid white;

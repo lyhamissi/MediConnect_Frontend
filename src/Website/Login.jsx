@@ -1,95 +1,73 @@
 import React from 'react';
-import '../styles/login.css';
-import { Link } from 'react-router-dom';
+import '../styles/logins.css';
+import { Link, useNavigate } from 'react-router-dom';
 import heroimage from '../assets/hero image.jpg';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import axios from 'axios';
 
 const Login = () => {
   const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const onsubmit = async (data) => {
     try {
-      const { userEmail, userPassword } = data;
-      const formData = { userEmail, userPassword };
-
-      const response = await axios.post(`http://localhost:5001/user/login`, formData, {
+      const response = await axios.post(`http://localhost:5001/user/login`, data, {
         headers: { "Content-Type": "application/json" }
       });
 
       if (response.status === 200) {
-        Notify.success("Login Successful");
-        // reset();
-
+        Notify.success(<h6 style={{ fontSize: "1.5rem" }}>"Login Successful"</h6>);
         const userToken = response.data;
         localStorage.setItem("userToken", JSON.stringify(userToken));
-        const Role = userToken?.user?.userRole;
-        console.log("======================Role",Role)
+        const role = userToken?.user?.userRole;
 
-        if (Role === "admin") {
+        if (role === "admin") {
+          sessionStorage.setItem("AdminId", userToken.user?._id)
+          sessionStorage.setItem("AdminName", userToken.user?.userName)
           navigate("/dashboard");
-
-        } 
-        else  if (Role === "patient") {
-          navigate("/patient");
-
         }
-        else  if (Role === "nurse") {
-          navigate("/nurse");
-
+        else if (role === "patient") navigate("/patient");
+        else if (role === "doctor") {
+          sessionStorage.setItem("doctorId", userToken.user?._id)
+          navigate("/doctor/all-patients");
         }
-        else  if (Role === "doctor") {
-          navigate("/doctor");
-
-        }
-        else {
-          navigate("/home");
-        }
+        else navigate("/home");
       } else {
         Notify.failure("Login failed. Please try again.");
       }
-    }
-    catch (error) {
+    } catch (error) {
       console.log(error);
+      Notify.failure("An error occurred. Please try again.");
     }
   };
 
   return (
-    <div className='signupform'>
-      <div className="herosignup">
-        <img src={heroimage} alt="" />
-        <div className="contentsignup">
-          <h5 className='welcome'>Welcome Back!!</h5>
-          <h3>"Revolutionizing Healthcare <br /> through Connected Medical <br /> Records"</h3>
-          <h5>...A secure platform that connects medical centers,<br /> ensuring patient health records are accessible <br /> anytime, anywhere...</h5>
-        </div>
-      </div>
-      <div className="login-form">
+    <div className="login">
+    <div className="login-container">
+      {/* <div className="hero-section">
+        <img src={heroimage} alt="Hero" />
+      </div> */}
+
+      <div className="form-section">
         <form onSubmit={handleSubmit(onsubmit)}>
-          <h4 className='log'>Login</h4>
-          <label>E-mail*</label><br />
-          <input type="email" {...register("userEmail", { required: true })} />
+          <h2>Welcome Back!</h2>
+
+          <label>Email*</label>
+          <input type="email" placeholder="Enter your email" {...register("userEmail", { required: true })} />
           {errors.userEmail && <span className="error">Email is required</span>}
 
-          <label>Password*</label><br />
-          <input type="password" {...register("userPassword", { required: true })} />
+          <label>Password*</label>
+          <input type="password" placeholder="Enter your password" {...register("userPassword", { required: true })} />
           {errors.userPassword && <span className="error">Password is required</span>}
-
-          <h6 className='login-link'>
-            Don't have an account?
-            <Link to='/signup' className='nav-link'><li>Sign Up here!!</li></Link>
-          </h6>
-          <button className='btn' type='submit'>Login</button>
+          <button className="login-btn" type="submit">Login</button>
+          <div className="signup-link">
+            <p>Don't have an account?</p>
+            <Link to="/signup">Sign Up here!</Link>
+          </div>
         </form>
       </div>
+    </div>
     </div>
   );
 };

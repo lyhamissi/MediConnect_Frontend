@@ -47,8 +47,8 @@ const PatientDashboard = () => {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="level1" fill="#0D2B37" />
-              <Bar dataKey="level2" fill="#144355ba" />
+              <Bar dataKey="level1" fill="#2979ff" />
+              <Bar dataKey="level2" fill="#2978ff93" />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -88,7 +88,7 @@ const PatientDashboard = () => {
           <div className="vital-card">Cholesterol: <strong>124 mg/dl</strong></div>
         </div>
 
-        <div className="patient-activities">
+        {/* <div className="patient-activities">
           <h3>Patient Activities</h3>
           <ResponsiveContainer width="100%" height={300}>
             <RadarChart cx="50%" cy="50%" outerRadius="80%" data={activitiesData}>
@@ -100,7 +100,7 @@ const PatientDashboard = () => {
               <Legend />
             </RadarChart>
           </ResponsiveContainer>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const NurseCard = ({getnurse}) => {
   const navigation = useNavigate();
    const handleNavigate = (_id) =>{
-    navigation(`/all-nurses/nurse-profile/${_id}`);
+    navigation(`/nurse-profile/${_id}`);
    }
   return (
     <div>

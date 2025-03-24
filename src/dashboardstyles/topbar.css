@@ -1,20 +1,13 @@
 .theme-toggle {
     cursor: pointer;
     font-size: 1.5rem;
-    right: 5rem;
+    right: 1rem;
     position: fixed;
-    color: #0D2B37;
+    color: #007BFF;
     background: none;
     width: 3rem;
     border: none;
     top: -4.3rem;
-}
-.notifications{
-  position: fixed;
-  right: 2rem;
-  font-size: 1.5rem;
-  color: #0D2B37;
-  top: 1.7rem;
 }
 
 .input {
@@ -56,7 +49,9 @@
     align-items: center;
     padding: 0 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* margin-bottom: 5rem; */
+    top: 0;
+    left: 19.2rem;
+    /* margin-bottom: 15rem; */
 }
 .main-content h3{
   color: #9aa0a5;
