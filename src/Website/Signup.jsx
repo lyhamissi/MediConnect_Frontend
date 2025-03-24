@@ -17,6 +17,7 @@ const Signup = () => {
   } = useForm();
 
   const onsubmit = async (data) => {
+  console.log("Form data submitted: ", data);
     try {
       const { userName, userEmail, userPassword } = data;
       const formData = {

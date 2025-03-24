@@ -10,7 +10,9 @@
     justify-content: center; /* Center the doctor cards */
     background-color: #f4f6f9; /* Light background to contrast the cards */
 }
-
+.profile-body{
+    margin-top: 2rem;
+}
 /* Doctor Card Styling */
 .doctos-card {
     background-color: white;
@@ -84,7 +86,11 @@
     margin: 0;
     font-size: 1.1rem; /* Slightly larger font for stats */
 }
-
+.info li{
+    text-align: left;
+    padding: 1rem;
+    margin-left: 0rem;
+}
 .stat small {
     color: #777;
     font-size: 0.875rem; 

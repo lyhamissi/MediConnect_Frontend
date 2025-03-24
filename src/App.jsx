@@ -60,13 +60,13 @@ function App() {
             <Route path='/doctor-view' element={<DoctorTable/>}/>
             <Route path='/add-patient' element={<AddPatient />} />
             <Route path='/dashboard/patient-profile' element={<AdminPatient/>}/>
-            <Route path='/dashboard/patient-profile/:id' element={<AdminPatientPro/>}/>
+            <Route path='/dashboard/patient-profile/:patientId' element={<AdminPatientPro/>}/>
             <Route path='/patient-profile/:id' element={<PatientProfile/>}/>
           </Route>
           <Route path='/patient' element={<PatientLayout />}>
             <Route path='/patient/patient-pro' element={<Patient/>}/>
             <Route path='/patient/patient-profile' element={<PatientProfile/>}/>
-            <Route path='/patient/patientpro/:id' element={<PatientPro/>}/>
+            <Route path='/patient/patientpro/:patientId' element={<PatientPro/>}/>
           </Route>
           <Route path='/nurse' element={<NurseLayout />}>
 

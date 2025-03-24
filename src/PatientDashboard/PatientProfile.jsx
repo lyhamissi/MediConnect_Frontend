@@ -40,10 +40,11 @@ const PatientProfile = () => {
           {/* <img src={doctor.profileImage} alt="Doctor Profile" /> */}
           <h2>{patient.patientName}</h2>
           <p className="expertise"><strong>{patient.patientDisease}</strong></p>
-          <p><strong>Email:</strong> <a href="mailto:smith-wright@example.com">{patient.patientEmail}</a></p>
           <p><strong>National ID:</strong> {patient.patientId}</p>
+          <p><strong>Email:</strong> <a href="mailto:smith-wright@example.com">{patient.patientEmail}</a></p>
+          
         </div>
-        <div className="doctor-stats">
+        <div className="doctor-statss">
           <div className="stat">
             <p>{patient.patientHeight}</p>
             <small>Height</small>

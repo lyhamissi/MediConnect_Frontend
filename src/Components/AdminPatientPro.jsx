@@ -63,7 +63,7 @@ const AdminPatientPro = () => {
                             <p><strong>Email:</strong> <a href="mailto:smith-wright@example.com">{patient.patientEmail}</a></p>
                             <p><strong>National ID:</strong> {patient.patientId}</p>
                         </div>
-                        <div className="doctor-stats">
+                        <div className="doctor-statss">
                             <div className="stat">
                                 <p>{patient.patientHeight}</p>
                                 <small>Height</small>
