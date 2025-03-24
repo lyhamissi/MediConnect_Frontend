@@ -27,7 +27,7 @@ const Login = () => {
           sessionStorage.setItem("AdminName", userToken.user?.userName)
           navigate("/dashboard");
         }
-        else if (role === "patient") navigate("/patient");
+        else if (role === "patient") navigate("/patient/patient-pro");
         else if (role === "doctor") {
           sessionStorage.setItem("doctorId", userToken.user?._id)
           navigate("/doctor/all-patients");
