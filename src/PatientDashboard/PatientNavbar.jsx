@@ -25,11 +25,16 @@ const PatientNavbar = () => {
             return newTheme;
         });
     };
+    const userName = sessionStorage.getItem("PatientName") || sessionStorage.getItem("UserName");
     return (
         <div className={`navbars ${isDarkTheme ? 'dark' : 'light'}`}>
             <button className="theme-toggle" onClick={toggleTheme}>
                 {isDarkTheme ? <IoMdSunny /> : <LuMoonStar />}
             </button>
+            <div className="navbar-profile">
+                {/* {userProfile && <img src={userProfile} className="profile-img" />} */}
+                {userName && <span>{userName}</span>}
+            </div>
             {/* <MdNotifications className='notifications' /> */}
         </div>
     )

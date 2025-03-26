@@ -25,11 +25,18 @@ const Login = () => {
         if (role === "admin") {
           sessionStorage.setItem("AdminId", userToken.user?._id)
           sessionStorage.setItem("AdminName", userToken.user?.userName)
+          sessionStorage.setItem("AdminProfile", userToken.user?.profileImage)
           navigate("/dashboard");
         }
-        else if (role === "patient") navigate("/patient/patient-pro");
+        else if (role === "patient") {
+          sessionStorage.setItem("PatientId",userToken.user._id);
+          sessionStorage.setItem("PatientName", userToken.user.userName);
+          navigate("/patient/patient-pro");
+        }
         else if (role === "doctor") {
           sessionStorage.setItem("doctorId", userToken.user?._id)
+          sessionStorage.setItem("DoctorName", userToken.user?.userName)
+          sessionStorage.setItem("DoctorProfile", userToken.user?.profileImage)
           navigate("/doctor/all-patients");
         }
         else navigate("/home");

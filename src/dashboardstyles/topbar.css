@@ -7,9 +7,30 @@
     background: none;
     width: 3rem;
     border: none;
-    top: -4.3rem;
+    top: -4.4rem;
 }
-
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 30rem;
+  font-size: 0.5rem;
+  /* margin-left: 55rem;  */
+  transform: translateY(-10%);
+  color: #007BFF;
+}
+.navbar-profile span{
+  font-size: 1.5rem;
+}
+.profile-img {
+  display: block;
+  border: 2px solid #007BFF;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
 .input {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background: transparent;

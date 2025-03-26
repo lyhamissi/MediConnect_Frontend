@@ -34,6 +34,8 @@ import DocPatientPro from './DoctorDashboard/DocPatientPro'
 import AdminPatient from './Components/AdminPatient'
 import AdminPatientPro from './Components/AdminPatientPro'
 import EditPatientForm from './DoctorDashboard/EditPatientForm'
+import Support from './PatientDashboard/Support'
+import Events from './Components/Events'
 function App() {
 
   return (
@@ -62,11 +64,13 @@ function App() {
             <Route path='/dashboard/patient-profile' element={<AdminPatient/>}/>
             <Route path='/dashboard/patient-profile/:patientId' element={<AdminPatientPro/>}/>
             <Route path='/patient-profile/:id' element={<PatientProfile/>}/>
+            <Route path='/events' element={<Events/>}/>
           </Route>
           <Route path='/patient' element={<PatientLayout />}>
             <Route path='/patient/patient-pro' element={<Patient/>}/>
             <Route path='/patient/patient-profile' element={<PatientProfile/>}/>
             <Route path='/patient/patientpro/:patientId' element={<PatientPro/>}/>
+            <Route path='/patient/support' element={<Support/>}/>
           </Route>
           <Route path='/nurse' element={<NurseLayout />}>
 

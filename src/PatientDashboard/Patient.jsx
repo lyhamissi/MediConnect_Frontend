@@ -52,7 +52,7 @@ const Patient = () => {
         }
 
         // Navigate to the patient profile page
-        navigate(`/patientpro/${patientId}`);
+        navigate(`/patient/patientpro/${patientId}`);
     };
     return (
         <div>

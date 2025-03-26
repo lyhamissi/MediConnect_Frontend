@@ -26,11 +26,17 @@ const Navbar = () => {
             return newTheme;
         });
     };
+    const userName = sessionStorage.getItem("AdminName") || sessionStorage.getItem("UserName");
+    const userProfile = sessionStorage.getItem("AdminProfile") || sessionStorage.getItem("UserProfile");
     return (
         <div className={`navbars ${isDarkTheme ? 'dark' : 'light'}`}>
             <button className="theme-toggle" onClick={toggleTheme}>
                 {isDarkTheme ? <IoMdSunny /> : <LuMoonStar />}
             </button>
+            <div className="navbar-profile">
+                {userProfile && <img src={userProfile} alt="profile" className="profile-img" />}
+                {userName && <span>{userName}</span>}
+            </div>
             {/* <MdNotifications className='notifications' /> */}
         </div>
     )

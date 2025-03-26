@@ -44,7 +44,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin: 2rem;
+    margin-bottom: 4rem;
+    background-color: #0056b3;
 }
 
 h3.side {

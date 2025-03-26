@@ -14,7 +14,10 @@
 .table-section:hover {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
-
+.table-section h1{
+  color: #007BFF;
+  margin-bottom: 1rem;
+}
 table {
   width: 100%;
   border-collapse: separate;

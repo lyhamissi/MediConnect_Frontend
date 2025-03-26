@@ -19,13 +19,13 @@ const Patientsidebar = () => {
       <div className={`sidebar ${isSidebarVisible ? "visible" : "hidden"}`}>
         <div className="topbar">
           <h3 className='side'>MediConnect</h3>
-          <button className="toggle-btn" onClick={() => setIsSidebarVisible(!isSidebarVisible)}>
+          {/* <button className="toggle-btn" onClick={() => setIsSidebarVisible(!isSidebarVisible)}>
             <IoMdMenu />
-          </button>
+          </button> */}
         </div>
         <ul className="nav-list">
           <Link to="patient-pro" className='nav-link'><li><FaHeartbeat className='nav-icon' /> Your Profile</li></Link>
-        <li onClick={() => setIsEventMenuOpen(!isEventMenuOpen)}>
+        {/* <li onClick={() => setIsEventMenuOpen(!isEventMenuOpen)}>
           <FaCalendarCheck className='nav-icon' /> Appointment
           {isEventMenuOpen ? <MdArrowDropDown className='submenu-icon' /> : <MdArrowRight className='submenu-icon' />}
         </li>
@@ -45,9 +45,9 @@ const Patientsidebar = () => {
             <Link to="/add-patient" className='nav-link'><li>Add Payment</li></Link>
             <Link to="/edit-patient" className='nav-link'><li>Patient Invoice</li></Link>
           </ul>
-        )}
+        )} */}
         <Link to="/events" className='nav-link'><li><SiEventstore className='nav-icon' /> Event Management</li></Link>
-        <Link to="/support" className='nav-link'><li><BiSupport className='nav-icon' /> Support</li></Link>
+        <Link to="/patient/support" className='nav-link'><li><BiSupport className='nav-icon' /> Support</li></Link>
         </ul>
         <button onClick={logout} className="view-all">
                     Logout

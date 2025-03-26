@@ -21,9 +21,9 @@ const Sidebar = () => {
             <div className={`sidebar ${isSidebarVisible ? "visible" : "hidden"}`}>
                 <div className="topbar">
                     <h3 className='side'>MediConnect</h3>
-                    <button className="toggle-btn" onClick={() => setIsSidebarVisible(!isSidebarVisible)}>
+                    {/* <button className="toggle-btn" onClick={() => setIsSidebarVisible(!isSidebarVisible)}>
                         <IoMdMenu />
-                    </button>
+                    </button> */}
                 </div>
 
                 <ul className="nav-list">
@@ -50,16 +50,16 @@ const Sidebar = () => {
                         <Link to="/all-patients" className='nav-link'><li>All Patients</li></Link>
                         <Link to="/dashboard/patient-profile" className='nav-link'><li>Patient Profile</li></Link>
                     </ul>
-                    <li onClick={() => setIsNursesMenuOpen(!isNursesMenuOpen)}>
+                    {/* <li onClick={() => setIsNursesMenuOpen(!isNursesMenuOpen)}>
                         <FaUserNurse className='nav-icon' /> Nurses
                         {isNursesMenuOpen ? <MdArrowDropDown className='submenu-icon' /> : <MdArrowRight className='submenu-icon' />}
                     </li>
                         <ul className={`submenu ${isNursesMenuOpen ? "open" : ""}`}>
                             <Link to="#" className='nav-link'><li>All Nurses</li></Link>
                             <Link to="#" className='nav-link'><li>Nurse Profile</li></Link>
-                        </ul>
+                        </ul> */}
                     <Link to="/events" className='nav-link'><li><SiEventstore className='nav-icon' /> Event Management</li></Link>
-                    <Link to="/support" className='nav-link'><li><BiSupport className='nav-icon' /> Support</li></Link>
+                    {/* <Link to="/support" className='nav-link'><li><BiSupport className='nav-icon' /> Support</li></Link> */}
                 </ul>
 
                 <button onClick={logout} className="logout-btn">
