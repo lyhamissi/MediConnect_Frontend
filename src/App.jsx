@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboardlayout from './Components/Dashboardlayout'
 import DoctorDashboard from './Components/DoctorDashboard'
