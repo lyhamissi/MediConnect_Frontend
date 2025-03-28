@@ -1,27 +1,30 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import '../dashboardstyles/doctorProfie.css';
-const DoctorProfile = () => {
-  const { id } = useParams(); // Get the doctor ID from URL
-  const [doctor, setDoctor] = useState(null);
-
-  useEffect(() => {
-    const getDoctor = async () => {
-      try {
-        const response = await axios.get(`http://localhost:5001/user/getDoctorById/${id}`);
-        setDoctor(response.data);
-      }
-      catch (error) {
-        console.error("Error fetching doctor", error);
-      }
-    };
-    getDoctor();
-  }, [id]);
-  if (!doctor) {
-    return <h6 style={{ fontSize: "1.5rem", color: " red" }}>Loading....</h6>;
-  }
-
+const DoctorDash = () => {
+    // const userName = sessionStorage.getItem("DoctorName") || sessionStorage.getItem("UserName");
+    // const userProfile = sessionStorage.getItem("DoctorProfile") || sessionStorage.getItem("UserProfile");
+    const _id = sessionStorage.getItem("doctorId") || sessionStorage.getItem("_id");
+    const [doctor, setDoctor] = useState(null);
+    
+    useEffect(() => {
+      if (!_id) return; // Prevent request if no ID is found
+    
+      const getDoctor = async () => {
+        try {
+          const response = await axios.get(`http://localhost:5001/user/getDoctorById/${_id}`);
+          setDoctor(response.data);
+        } catch (error) {
+          console.error("Error fetching doctor", error);
+        }
+      };
+    
+      getDoctor();
+    }, []); // Removed _id from dependency array
+    
+    if (!doctor) {
+      return <h6 style={{ fontSize: "1.5rem", color: "red" }}>Doctor Not Found</h6>;
+    }
+    
   return (
     <div className="doctor-profile">
 
@@ -78,4 +81,4 @@ const DoctorProfile = () => {
   );
 };
 
-export default DoctorProfile;
+export default DoctorDash

@@ -1,3 +1,6 @@
+.dash{
+  margin-left: 2rem;
+}
 .widgets {
   display: flex;
   gap: 1rem;

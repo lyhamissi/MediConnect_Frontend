@@ -6,7 +6,7 @@ import { BiSupport } from "react-icons/bi";
 import { FaHeartbeat, FaCalendarCheck, FaFileInvoiceDollar, FaUserNurse } from "react-icons/fa";
 import { FaUserDoctor, FaBedPulse } from "react-icons/fa6";
 import { IoMdMenu } from "react-icons/io";
-import { MdDashboard, MdDonutSmall, MdArrowDropDown, MdArrowRight } from "react-icons/md";
+import { MdDashboard, MdSettings, MdArrowDropDown, MdArrowRight } from "react-icons/md";
 import useLogout from '../hooks/useLogout';
 
 const Sidebar = () => {
@@ -59,7 +59,7 @@ const Sidebar = () => {
                             <Link to="#" className='nav-link'><li>Nurse Profile</li></Link>
                         </ul> */}
                     <Link to="/events" className='nav-link'><li><SiEventstore className='nav-icon' /> Event Management</li></Link>
-                    {/* <Link to="/support" className='nav-link'><li><BiSupport className='nav-icon' /> Support</li></Link> */}
+                    <Link to="/dashboard/settings" className='nav-link'><li><MdSettings className='nav-icon' /> Settings</li></Link>
                 </ul>
 
                 <button onClick={logout} className="logout-btn">

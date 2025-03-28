@@ -22,14 +22,12 @@ table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 0.5rem;
-  /* Add space between rows for a cleaner look */
   min-width: 40rem;
   border-radius: 0.5rem;
 }
 
 th {
   background: #007BFF;
-  /* Primary color header background */
   color: #ffffff;
   padding: 1rem;
   text-align: left;
@@ -38,10 +36,9 @@ th {
 
 td {
   background-color: #dceaf8;
-  padding: 1.5rem;
+  padding: 0.75rem;
   text-align: left;
   color: #0D2B37;
-  height: 2rem;
   border-bottom: 1px solid #e4e7ec;
   transition: background 0.3s ease;
 }
@@ -148,4 +145,7 @@ body.dark-theme tbody tr:nth-child(even) td {
 }
 body.dark-theme tbody tr:hover td{
   background-color: #191e24;
+}
+body.dark-theme .table-section h1{
+  color: white;
 }

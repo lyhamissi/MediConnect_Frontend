@@ -17,7 +17,7 @@ const Login = () => {
       });
 
       if (response.status === 200) {
-        Notify.success(<h6 style={{ fontSize: "1rem" }}>"Login Successful"</h6>);
+        Notify.success(<h6 style={{ fontSize: "0.5rem" }}>"Login Successful"</h6>);
         const userToken = response.data;
         localStorage.setItem("userToken", JSON.stringify(userToken));
         const role = userToken?.user?.userRole;
@@ -37,15 +37,15 @@ const Login = () => {
           sessionStorage.setItem("doctorId", userToken.user?._id)
           sessionStorage.setItem("DoctorName", userToken.user?.userName)
           sessionStorage.setItem("DoctorProfile", userToken.user?.profileImage)
-          navigate("/doctor/all-patients");
+          navigate("/doctor/dash");
         }
         else navigate("/home");
       } else {
-        Notify.failure(<h6 style={{ fontSize: "1rem" }}>"Login failed. Please try again."</h6>);
+        Notify.failure(<h6 style={{ fontSize: "0.5rem" }}>"Login failed. Please try again."</h6>);
       }
     } catch (error) {
       console.log(error);
-      Notify.failure(<h6 style={{ fontSize: "1rem" }}>"An error occurred. Please try again."</h6>);
+      Notify.failure(<h6 style={{ fontSize: "0.5rem" }}>"An error occurred. Please try again."</h6>);
     }
   };
 

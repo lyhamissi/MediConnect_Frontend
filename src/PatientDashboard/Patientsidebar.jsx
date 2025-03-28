@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { SiEventstore } from "react-icons/si";
 import { BiSupport } from "react-icons/bi";
 import { FaHeartbeat, FaCalendarCheck, FaFileInvoiceDollar } from "react-icons/fa";
-import { FaUserDoctor, FaBedPulse } from "react-icons/fa6";
+import { FaUserDoctor, FaBedPulse, FaUser } from "react-icons/fa6";
 import { IoMdMenu } from "react-icons/io";
-import { MdDashboard, MdDonutSmall, MdArrowDropDown, MdArrowRight } from "react-icons/md";
+import { MdSettings , MdDonutSmall, MdArrowDropDown, MdArrowRight } from "react-icons/md";
 import useLogout from '../hooks/useLogout';
 const Patientsidebar = () => {
 
@@ -24,8 +24,8 @@ const Patientsidebar = () => {
           </button> */}
         </div>
         <ul className="nav-list">
-          <Link to="patient-pro" className='nav-link'><li><FaHeartbeat className='nav-icon' /> Your Profile</li></Link>
-        {/* <li onClick={() => setIsEventMenuOpen(!isEventMenuOpen)}>
+          <Link to="patient-pro" className='nav-link'><li><FaUser className='nav-icon' /> Your Profile</li></Link>
+          {/* <li onClick={() => setIsEventMenuOpen(!isEventMenuOpen)}>
           <FaCalendarCheck className='nav-icon' /> Appointment
           {isEventMenuOpen ? <MdArrowDropDown className='submenu-icon' /> : <MdArrowRight className='submenu-icon' />}
         </li>
@@ -46,12 +46,13 @@ const Patientsidebar = () => {
             <Link to="/edit-patient" className='nav-link'><li>Patient Invoice</li></Link>
           </ul>
         )} */}
-        <Link to="/events" className='nav-link'><li><SiEventstore className='nav-icon' /> Event Management</li></Link>
-        <Link to="/patient/support" className='nav-link'><li><BiSupport className='nav-icon' /> Support</li></Link>
+          <Link to="/patient/event" className='nav-link'><li><SiEventstore className='nav-icon' /> Event Management</li></Link>
+          <Link to="/patient/support" className='nav-link'><li><BiSupport className='nav-icon' /> Support</li></Link>
+          <Link to="/patient/settings" className='nav-link'><li><MdSettings  className='nav-icon' /> Settings</li></Link>
         </ul>
         <button onClick={logout} className="view-all">
-                    Logout
-                </button>
+          Logout
+        </button>
       </div>
       {!isSidebarVisible && (
         <button className="show-btn" onClick={() => setIsSidebarVisible(true)}>

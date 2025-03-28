@@ -12,8 +12,12 @@
     margin-left: 5rem;
 }
 .doctor-profile .content h1{
-    color: #0D2B37;
+    color: #007bff;
     font-size: 2rem;
+}
+.profile-body h2{
+    color: #007bff;
+    margin-bottom: 1rem;
 }
 .doctor-profile .content .desc{
     font-size: 1rem;
@@ -46,30 +50,47 @@
     height: auto;
 }
 .specialiity h1{
-    color: #0D2B37;
+    color: #007bff;
 }
 .specialiity li{
     color: black;
     font-weight: lighter;
+    text-align: left;
 }
 strong{
-    color: #0D2B37;
+    color: #007bff;
 }
 .specialiity .info li{
     margin-top: 0rem;
     margin-bottom: -0.5rem;
+
+}
+.message-list{
+    text-align: left;
+    margin-top: 2rem;
 }
 body.light-theme .specialiity{
     background-color: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.expertise strong{
+    color: #555;
 }
 body.dark-theme .doctor-profile, .specialiity{
     background-color: #181818;
     box-shadow: 0 0 5px rgb(80, 80, 80);
   color: white  ;
 }
-body.dark-theme .doctor-profile .specialiity h1,
+body.dark-theme .doctor-profile .specialiity h3,
 body.dark-theme .doctor-profile .specialiity strong,
 body.dark-theme .doctor-profile .profile-body h2{
     color: white;
+}
+body.dark-theme .specialiity .info li strong, body.dark-theme .message-list strong{
+    color: white;
+}
+.specialiity h3, .profile-body h3, .chart-section h3{
+    margin-left: 0rem;
+    color: #007bff;
+    font-size: 1.5rem;
 }

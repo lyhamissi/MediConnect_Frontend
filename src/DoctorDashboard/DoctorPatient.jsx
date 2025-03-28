@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from "recharts";
 import { BsAlarm } from "react-icons/bs";
 
-const PatientProfile = () => {
+const DoctorPatient = () => {
   const data = [
     { name: "Jan", BloodPressure: 30, HeartRate: 35 },
     { name: "Feb", BloodPressure: 60, HeartRate: 30 },
@@ -32,6 +32,7 @@ const PatientProfile = () => {
   if (!patient) {
     return <h6 style={{ fontSize: "1.5rem", color: " red" }}>Patient Not Found</h6>
   }
+  
   return (
     <div className="dashboard-container">
 
@@ -42,7 +43,7 @@ const PatientProfile = () => {
           <p className="expertise"><strong>{patient.patientDisease}</strong></p>
           <p><strong>National ID:</strong> {patient.patientId}</p>
           <p><strong>Email:</strong> <a href="mailto:smith-wright@example.com">{patient.patientEmail}</a></p>
-          
+
         </div>
         <div className="doctor-statss">
           <div className="stat">
@@ -67,14 +68,16 @@ const PatientProfile = () => {
         <h3>Blood Levels</h3>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={data}>
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxis dataKey="name" tick={{ fontSize: 12 }} />
+            <YAxis tick={{ fontSize: 12 }} />
             <Tooltip />
-            <Legend />
+            <Legend wrapperStyle={{ fontSize: 5 }} /> {/* Adjust this value as needed */}
             <Bar dataKey="BloodPressure" fill="#2979ff" />
             <Bar dataKey="HeartRate" fill="#2978ff93" />
           </BarChart>
         </ResponsiveContainer>
+
+
       </div>
       {/* <div className="bottom-section">
       <div className="specialiity">
@@ -100,7 +103,7 @@ const PatientProfile = () => {
       <div className="specialiity">
         <h3>Messages</h3>
         <div className="message-list">
-          <li style={{marginTop: "2rem"}}><strong>{patient.doctorName} </strong> {patient.patientDescription}</li>
+          <li style={{ marginTop: "2rem" }}><strong>{patient.doctorName} :</strong> {patient.patientDescription}</li>
         </div>
       </div>
       {/* <div className="specialiity">
@@ -115,4 +118,4 @@ const PatientProfile = () => {
   )
 }
 
-export default PatientProfile
+export default DoctorPatient

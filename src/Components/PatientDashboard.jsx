@@ -4,13 +4,13 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Rada
 import profile from '../assets/profile1.jpg'
 import { BsAlarm } from "react-icons/bs";
 const data = [
-  { name: "Jan", level1: 30, level2: 25 },
-  { name: "Feb", level1: 60, level2: 20 },
-  { name: "Mar", level1: 65, level2: 40 },
-  { name: "Apr", level1: 80, level2: 75 },
-  { name: "May", level1: 10, level2: 20 },
-  { name: "Jun", level1: 90, level2: 70 },
-  { name: "Jul", level1: 70, level2: 50 },
+  { name: "Jan", BloodPressure: 30, HeartRate: 35 },
+  { name: "Feb", BloodPressure: 60, HeartRate: 30 },
+  { name: "Mar", BloodPressure: 65, HeartRate: 40 },
+  { name: "Apr", BloodPressure: 80, HeartRate: 65 },
+  { name: "May", BloodPressure: 40, HeartRate: 50 },
+  { name: "Jun", BloodPressure: 90, HeartRate: 70 },
+  { name: "Jul", BloodPressure: 70, HeartRate: 50 },
 ];
 const activitiesData = [
   { subject: "Eating", A: 80, B: 50, fullMark: 100 },
@@ -47,8 +47,8 @@ const PatientDashboard = () => {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="level1" fill="#2979ff" />
-              <Bar dataKey="level2" fill="#2978ff93" />
+              <Bar dataKey="BloodPressure" fill="#2979ff" />
+              <Bar dataKey="HeartRate" fill="#2978ff93" />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -82,9 +82,9 @@ const PatientDashboard = () => {
         </div>
         <div className="patient-vitals">
           <h3>Patient Vitals</h3>
-          <div className="vital-card">Blood Pressure: <strong>120/89 mmHg</strong></div>
-          <div className="vital-card">Heart Rate: <strong>107 Per min</strong></div>
-          <div className="vital-card">Glucose Rate: <strong>97 mg/dl</strong></div>
+          <div className="vital-card">Blood Pressure: <strong> 120/89 mmHg</strong></div>
+          <div className="vital-card">Heart Rate: <strong> 107 Per min</strong></div>
+          <div className="vital-card">Glucose Rate: <strong> 97 mg/dl</strong></div>
           <div className="vital-card">Cholesterol: <strong>124 mg/dl</strong></div>
         </div>
 

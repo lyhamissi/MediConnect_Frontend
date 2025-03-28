@@ -3,13 +3,13 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Rada
 import { useParams } from "react-router-dom";
 const AdminPatientPro = () => {
     const data = [
-        { name: "Jan", level1: 30, level2: 25 },
-        { name: "Feb", level1: 60, level2: 20 },
-        { name: "Mar", level1: 65, level2: 40 },
-        { name: "Apr", level1: 80, level2: 75 },
-        { name: "May", level1: 10, level2: 20 },
-        { name: "Jun", level1: 90, level2: 70 },
-        { name: "Jul", level1: 70, level2: 50 },
+        { name: "Jan", BloodPressure: 30, HeartRate: 35 },
+        { name: "Feb", BloodPressure: 60, HeartRate: 30 },
+        { name: "Mar", BloodPressure: 65, HeartRate: 40 },
+        { name: "Apr", BloodPressure: 80, HeartRate: 65 },
+        { name: "May", BloodPressure: 40, HeartRate: 50 },
+        { name: "Jun", BloodPressure: 90, HeartRate: 70 },
+        { name: "Jul", BloodPressure: 70, HeartRate: 50 },
     ];
     const { patientId } = useParams();
     const [patient, setPatient] = useState(null);
@@ -90,8 +90,8 @@ const AdminPatientPro = () => {
                             <YAxis />
                             <Tooltip />
                             <Legend />
-                            <Bar dataKey="level1" fill="#0D2B37" />
-                            <Bar dataKey="level2" fill="#144355ba" />
+                            <Bar dataKey="BloodPressure" fill="#2979ff" />
+                            <Bar dataKey="HeartRate" fill="#2978ff93" />
                         </BarChart>
                     </ResponsiveContainer>
                 </div>
@@ -107,7 +107,7 @@ const AdminPatientPro = () => {
                 </div> */}
 
                 <div className="specialiity">
-                    <h1>Personal Information</h1>
+                    <h3>Personal Information</h3>
                     {patient && (
                         <ul className="info">
                             <li><strong>Names:</strong> {patient.patientName}</li>
@@ -119,10 +119,10 @@ const AdminPatientPro = () => {
                         </ul>)}
                 </div>
                 <div className="specialiity">
-                    <h1>Messages</h1>
+                    <h3>Messages</h3>
                     {patient && (
                         <div className="message-list">
-                            <li style={{ marginTop: "2rem" }}><strong>Dr.Caleb Hamissi: </strong> {patient.patientDescription}</li>
+                            <li style={{ marginTop: "2rem" }}><strong >{patient.doctorName}:  </strong> {patient.patientDescription}</li>
                         </div>)}
                 </div></div>
         </div>

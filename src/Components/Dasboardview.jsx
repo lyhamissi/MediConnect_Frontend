@@ -10,19 +10,19 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 const Dasboardview = () => {
   const [getdoctors, setGetDoctors] = useState([]);
+
   useEffect(() => {
     const getDoctors = async () => {
       try {
         const response = await axios.get("http://localhost:5001/user/getAllDoctors");
-        setGetDoctors(response.data);
-      }
-      catch (error) {
+        setGetDoctors(response.data.slice(0, 2)); // Limit to 3 doctors
+      } catch (error) {
         console.log(error);
-
       }
-    }
+    };
     getDoctors();
   }, []);
+  
 
   const [doctorCount, setDoctorCount] = useState(0);
   const [error, setError] = useState("");
