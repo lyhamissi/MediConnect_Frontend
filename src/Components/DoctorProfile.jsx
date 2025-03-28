@@ -66,14 +66,14 @@ const DoctorProfile = () => {
             <li><strong>Fardnio Nany</strong> - Lorem ipsum dolor sit amet...</li>
           </div>
       </div>
-      <div className="specialiity">
+      {/* <div className="specialiity">
           <h3>Notifications</h3>
           <ul>
             <li>📸 Dr. Sultads sent you a photo</li>
             <li>⏰ Reminder: Treatment Time! 25 July - 20:00</li>
             <li>📊 Report created successfully</li>
           </ul>
-        </div>
+        </div> */}
     </div>
   );
 };

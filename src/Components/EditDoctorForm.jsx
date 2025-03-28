@@ -118,12 +118,12 @@ const EditDoctorForm = () => {
             onChange={handleChange}
             required
           />
-          <label>Profile Image:</label>
+          {/* <label>Profile Image:</label>
           <input
             type="file"
             name="profileImage"
             onChange={handleFileChange}
-          />
+          /> */}
           <label>Doctor Description</label>
           <textarea
             name="userDescription"

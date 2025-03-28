@@ -50,7 +50,7 @@ const Patientsidebar = () => {
           <Link to="/patient/support" className='nav-link'><li><BiSupport className='nav-icon' /> Support</li></Link>
           <Link to="/patient/settings" className='nav-link'><li><MdSettings  className='nav-icon' /> Settings</li></Link>
         </ul>
-        <button onClick={logout} className="view-all">
+        <button onClick={logout} className="logout-btn">
           Logout
         </button>
       </div>

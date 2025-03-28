@@ -62,7 +62,7 @@ const DoctorDash = () => {
         <li><strong>Speciality:</strong> {doctor.Speciality}</li>
         </ul>
       </div>
-        <div className="specialiity">
+        {/* <div className="specialiity">
           <h3>Messages</h3>
           <div className="message-list">
             <li><strong>Sunil Joshi</strong> - Lorem ipsum dolor sit amet...</li>
@@ -76,7 +76,7 @@ const DoctorDash = () => {
             <li>⏰ Reminder: Treatment Time! 25 July - 20:00</li>
             <li>📊 Report created successfully</li>
           </ul>
-        </div>
+        </div> */}
     </div>
   );
 };

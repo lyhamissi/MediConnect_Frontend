@@ -228,7 +228,14 @@ body.dark-theme .show-btn {
     background: #1818188c;
     color: white;
 }
-
+body.dark-theme .logout-btn{
+    background-color: #383838;
+    color: white;
+  }
+  body.dark-theme .logout-btn:hover{
+    background-color: #202020;
+    color: white;
+  }
 @media screen and (max-width: 768px) {
     .dashboard {
       flex-direction: column;

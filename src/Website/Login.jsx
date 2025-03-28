@@ -29,8 +29,9 @@ const Login = () => {
           navigate("/dashboard");
         }
         else if (role === "patient") {
-          sessionStorage.setItem("PatientId",userToken.user._id);
-          sessionStorage.setItem("PatientName", userToken.user.userName);
+          sessionStorage.setItem("token",userToken.user?.token);
+          sessionStorage.setItem("PatientId",userToken.user?._id);
+          sessionStorage.setItem("PatientName", userToken.user?.userName);
           navigate("/patient/patient-pro");
         }
         else if (role === "doctor") {

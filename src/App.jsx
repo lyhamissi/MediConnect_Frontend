@@ -38,6 +38,10 @@ import Events from './Components/Events'
 import DoctorPatient from './DoctorDashboard/DoctorPatient'
 import DoctorPati from './DoctorDashboard/DoctorPati'
 import DoctorDash from './DoctorDashboard/DoctorDash'
+import Settings from './Components/Settings'
+import DocSettings from './DoctorDashboard/DocSettings'
+import PaSettings from './PatientDashboard/PaSettings'
+import PatientEvent from './PatientDashboard/PatientEvent'
 function App() {
 
   return (
@@ -67,12 +71,15 @@ function App() {
             <Route path='/dashboard/patient-profile/:patientId' element={<AdminPatientPro/>}/>
             <Route path='/patient-profile/:id' element={<PatientProfile/>}/>
             <Route path='/events' element={<Events/>}/>
+            <Route path='/dashboard/settings' element={<Settings/>}/>
           </Route>
           <Route path='/patient' element={<PatientLayout />}>
             <Route path='/patient/patient-pro' element={<Patient/>}/>
             <Route path='/patient/patient-profile' element={<PatientProfile/>}/>
             <Route path='/patient/patientpro/:patientId' element={<PatientPro/>}/>
             <Route path='/patient/support' element={<Support/>}/>
+            <Route path='/patient/settings' element={<PaSettings/>}/>
+            <Route path='/patient/event' element={<PatientEvent/>}/>
           </Route>
           <Route path='/nurse' element={<NurseLayout />}>
 
@@ -88,6 +95,7 @@ function App() {
             <Route path='/doctor/all-nurses' element={<AllNurses />} />
            < Route path='/doctor/nurse-doctor' element={<NurseTable/>}/>
            <Route path='/doctor/nurse-profile/:id' element={<NurseProfile />} />
+           <Route path='/doctor/settings' element={<DocSettings/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
