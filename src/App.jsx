@@ -51,6 +51,7 @@ function App() {
           <Route path='' index element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login'  element={<Login />} />
+          
           <Route path='/' element={<Dashboardlayout />}>
             <Route path='/dashboard' element={<Dasboardview />} />
             <Route path='/dashboard/doctor-dashboard' element={<DoctorDashboard />} />

@@ -28,7 +28,7 @@ const Sidebar = () => {
 
                 <ul className="nav-list">
                     <Link to="/dashboard" className='nav-link'><li><MdDashboard className='nav-icon' /> Dashboard</li></Link>
-                    <Link to="/patient-dashboard" className='nav-link'><li><FaHeartbeat className='nav-icon' /> Patient Dashboard</li></Link>
+                    {/* <Link to="/patient-dashboard" className='nav-link'><li><FaHeartbeat className='nav-icon' /> Patient Dashboard</li></Link> */}
                     {/* <Link to="/dashboard/doctor-dashboard" className='nav-link'><li><MdDonutSmall className='nav-icon' /> Doctor Dashboard</li></Link> */}
 
                     <li onClick={() => setIsDoctorsMenuOpen(!isDoctorsMenuOpen)} className="menu-item">

@@ -184,6 +184,42 @@ h3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 } */
+ .third-section{
+  margin-top: -7rem;
+ }
+ .table-section .top-section h2{
+  color: #007BFF;
+ }
+ .top-section{
+  display: flex;
+  gap: 51rem;
+ }
+ .add-btn {
+  margin-top: -0.5rem;
+  background-color: white;
+  color: #007bff;
+  border: 2px solid #007bff;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+ .third-section .table-section{
+  margin-left: 2rem;
+  width: 146vh;
+ }
 body.dark-theme .widget {
   background-color: #181818;
   box-shadow: 0 0 5px rgb(80, 80, 80);
@@ -196,7 +232,8 @@ body.dark-theme .area {
 }
 body.dark-theme .doctors-list, 
 body.dark-theme .doctor-card,
-body.dark-theme .card-modal{
+body.dark-theme .card-modal,
+body.dark-theme .doctors-header{
   background-color: #181818;
   box-shadow: 0 0 5px rgb(80, 80, 80);
   color: white  ;
@@ -208,5 +245,15 @@ body.dark-theme .ordericon,
 body.dark-theme .pageicon,
 body.dark-theme .totalicon,
 body.dark-theme .downloadicon{
+  color: white;
+}
+body.dark-theme .add-btn,
+body.dark-theme .view-all{
+  background-color: #0e0d0d;
+  box-shadow: 0 0 5px rgb(80, 80, 80);
+  color: white  ;
+  border: 1px  white;
+}
+body.dark-theme  .table-section .top-section h2{
   color: white;
 }

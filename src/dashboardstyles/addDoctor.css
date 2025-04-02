@@ -134,7 +134,7 @@
 body.dark-theme .forms,
 body.dark-theme input,
 body.dark-theme textarea,
-body.dark-theme .forms form {
+body.dark-theme .heades-container{
     background-color: #181818;
     box-shadow: 0 0 5px rgb(80, 80, 80);
     border: 0.1rem solid white;
@@ -142,5 +142,20 @@ body.dark-theme .forms form {
 }
 body.dark-theme .forms form h2,
 body.dark-theme .cancel{
+    color: white;
+}
+body.dark-theme .forms form label{
+    color: white;
+}
+body.dark-theme .doctor-btn{
+    background-color: #141414;
+    box-shadow: 0 0 5px rgb(80, 80, 80);
+    border: 0.1rem  white;
+    color: white;
+}
+body.dark-theme .forms form{
+    background-color: #181818;
+    box-shadow: 0 0 5px rgb(80, 80, 80);
+    border: 0.1rem  white;
     color: white;
 }

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { MdMedicationLiquid, MdKeyboardArrowDown, MdKeyboardArrowUp, MdOutlineClose } from "react-icons/md";
 import { FaUserDoctor, FaBed, FaBedPulse } from "react-icons/fa6";
-import { FaAmbulance,FaUserNurse } from "react-icons/fa";
+import { FaAmbulance, FaUserNurse } from "react-icons/fa";
 import { IoSettingsSharp } from "react-icons/io5";
 import '../dashboardstyles/dashboardview.css'
 import profile1 from '../assets/profile1.jpg'
 import Areas from './Area';
+import { MdModeEdit, MdDelete } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 const Dasboardview = () => {
@@ -22,7 +23,7 @@ const Dasboardview = () => {
     };
     getDoctors();
   }, []);
-  
+
 
   const [doctorCount, setDoctorCount] = useState(0);
   const [error, setError] = useState("");
@@ -42,11 +43,11 @@ const Dasboardview = () => {
 
     fetchDoctorCount();
   }, []);
-  
+
   const [nurseCount, setNurseCount] = useState(0);
-  useEffect(() =>{
-    const fetchNurseCount = async () =>{
-      try{
+  useEffect(() => {
+    const fetchNurseCount = async () => {
+      try {
         const response = await fetch("http://localhost:5001/user/countNurses");
         if (!response.ok) {
           throw new Error("Failed to fetch Nurse count");
@@ -58,11 +59,11 @@ const Dasboardview = () => {
       }
     };
     fetchNurseCount();
-  },[]);
-  const [patientCount, setPatientCount]= useState(0);
-  useEffect(() =>{
-    const fetchPatientCount = async () =>{
-      try{
+  }, []);
+  const [patientCount, setPatientCount] = useState(0);
+  useEffect(() => {
+    const fetchPatientCount = async () => {
+      try {
         const response = await fetch("http://localhost:5001/patient/countPatients");
         if (!response.ok) {
           throw new Error("Failed to fetch Patient count");
@@ -74,7 +75,55 @@ const Dasboardview = () => {
       }
     };
     fetchPatientCount();
-  },[]);
+  }, []);
+  const [getpatients, setGetPatients] = useState([]);
+  useEffect(() => {
+    const getPatients = async () => {
+
+      try {
+        const response = await axios.get(`http://localhost:5001/patient/getAllPatients`);
+        setGetPatients(response.data.slice(0, 3));
+      }
+      catch (error) {
+        console.log(error);
+
+      }
+    }
+    getPatients();
+  }, []);
+  const [supportRequests, setSupportRequests] = useState([]);
+  const [reply, setReply] = useState("");
+  const [selectedRequestId, setSelectedRequestId] = useState(null);
+  useEffect(() => {
+    const fetchSupportRequests = async () => {
+      try {
+        const response = await axios.get('http://localhost:5001/contact//getrequest');
+        setSupportRequests(response.data); // Update state with the fetched requests
+      } catch (error) {
+        console.error('Error fetching support requests:', error);
+      }
+    };
+
+    fetchSupportRequests();
+  }, []);
+  const handleReplySubmit = async (e, requestId, email) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(`http://localhost:5001/contact/reply`, {
+        requestId,
+        email, // Send reply to the user email
+        replyMessage: reply,
+      });
+
+      alert(response.data.message);
+      setReply(""); // Clear input after submitting
+      setSelectedRequestId(null); // Hide form after submitting
+    } catch (error) {
+      console.error("Error sending reply:", error);
+      alert("Failed to send reply. Try again.");
+    }
+  };
   return (
     <div className='dash'>
       <div className="widgets">
@@ -85,7 +134,7 @@ const Dasboardview = () => {
 
             </div>
             <div className="texts">
-            {error ? (
+              {error ? (
                 <p style={{ color: "red", fontSize: "1.5rem" }}>{error}</p>
               ) : (
                 <>
@@ -104,7 +153,7 @@ const Dasboardview = () => {
             </div>
             <div className="texts">
               {error ? (
-                <p style={{ color: "red" ,fontSize: "1.5rem"}}>{error}</p>
+                <p style={{ color: "red", fontSize: "1.5rem" }}>{error}</p>
               ) : (
                 <>
                   <p>{doctorCount}</p>
@@ -133,8 +182,8 @@ const Dasboardview = () => {
 
             </div>
             <div className="texts">
-            {error ? (
-                <p style={{ color: "red",fontSize: "1.5rem" }}>{error}</p>
+              {error ? (
+                <p style={{ color: "red", fontSize: "1.5rem" }}>{error}</p>
               ) : (
                 <>
                   <p>{nurseCount}</p>
@@ -200,6 +249,114 @@ const Dasboardview = () => {
           </div>
         </div>
       </div> */}
+      <div className="third-section">
+        <div className="table-section">
+          <div className="top-section">
+            <h2>Patients</h2>
+            <button className='add-btn'><Link to="/add-patient" className='nav-link'>+Add Patient</Link></button>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Full Names</th>
+                <th>National Id</th>
+                <th>Gender</th>
+                <th>Age</th>
+                {/* <th>E-mail</th> */}
+                <th>Disease</th>
+                <th colSpan={2} >Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {getpatients.map((patient) => (
+                <tr key={patient._id}>
+                  <td>{patient.patientName}</td>
+                  <td>{patient.patientId}</td>
+                  <td>{patient.patientGender}</td>
+                  <td>{patient.patientAge}</td>
+                  {/* <td>{patient.patientEmail}</td> */}
+                  <td>{patient.patientDisease}</td>
+                  <td>
+                    {/* <Link to={`/doctor/edit-patientform/${patient._id}`}> */}
+                    <MdModeEdit className='edit' />
+                    {/* </Link> */}
+                  </td>
+                  <td><MdDelete className='delete'
+                   onClick={() => handleDelete(patient._id)}
+                  /></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="table-section" style={{marginTop:"0rem"}}>
+          <div className="top-section"><h2>Support Requests</h2></div>
+          <table>
+            <thead>
+              <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th >Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {supportRequests.map((request) => (
+                <React.Fragment key={request._id}>
+                  <tr>
+                    <td>{request.fullName}</td>
+                    <td>{request.email}</td>
+                    <td>{request.message}</td>
+                    <td>{new Date(request.createdAt).toLocaleString()}</td>
+                    <td style={{ color: "green" }}>{request.status}</td>
+                    <td>
+                      <span
+                        className="edit"
+                        style={{ fontSize: "1rem", cursor: "pointer", color: "blue" }}
+                        onClick={() =>
+                          setSelectedRequestId(
+                            selectedRequestId === request._id ? null : request._id
+                          )
+                        }
+                      >
+                        Reply
+                      </span>
+                    </td>
+                  </tr>
+
+                  {/* Show Reply Form Below Row If Selected */}
+                  {selectedRequestId === request._id && (
+                    <tr>
+                      <td colSpan="6">
+                        <form
+                          onSubmit={(e) => handleReplySubmit(e, request._id, request.email)}
+                          style={{ display: "flex", gap: "10px", alignItems: "center" }}
+                        >
+                          <input
+                            type="text"
+                            placeholder="Type your reply..."
+                            value={reply}
+                            onChange={(e) => setReply(e.target.value)}
+                            required
+                            style={{ flex: 1, padding: "5px" }}
+                          />
+                          <button className="edit" type="submit" style={{ padding: "5px 10px", cursor: "pointer" }}>
+                            Send
+                          </button>
+                        </form>
+                      </td>
+                    </tr>
+                  )}
+                </React.Fragment>
+              ))}
+            </tbody>
+          </table>
+
+        </div>
+      </div>
     </div>
   )
 }
