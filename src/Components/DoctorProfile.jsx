@@ -62,8 +62,8 @@ const DoctorProfile = () => {
         <div className="specialiity">
           <h3>Messages</h3>
           <div className="message-list">
-            <li><strong>Sunil Joshi</strong> - Lorem ipsum dolor sit amet...</li>
-            <li><strong>Fardnio Nany</strong> - Lorem ipsum dolor sit amet...</li>
+            <li><strong>Dr. Za Ruth</strong> - Lorem ipsum dolor sit amet...</li>
+            <li><strong>Dr.Smith</strong> - Lorem ipsum dolor sit amet...</li>
           </div>
       </div>
       {/* <div className="specialiity">

@@ -37,7 +37,7 @@
 }
 .settings-content {
   margin-top: 4rem;
-  margin-left: -7rem;
+  margin-left:0rem;
   justify-content: center;
   flex: 1;
   padding: 30px;
@@ -48,26 +48,30 @@
   width: 50rem;
   padding: 25px;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  margin-left:5rem;
 }
 
 .settings-section h3 {
   margin-bottom: 15px;
   font-size: 18px;
   font-weight: 600;
-  color: #343A40;
+  color: #007BFF;
   margin-left: 0rem;
+  text-align:center;
 }
 
 /* Input Fields */
 .settings-section label {
+  text-align:center;
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
   color: #333;
   margin-left: 0rem;
   margin-bottom: 1rem;
+  font-weight:bold
 }
 
 .settings-section input {
@@ -91,7 +95,8 @@
   border-radius: 8px;
   font-size: 14px;
   font-weight: 500;
-  transition: 0.3s;
+  transition: 0.3s;   
+  margin-left:17rem;
 }
 .settings-section .checkbox{
   width: 1rem;
@@ -105,7 +110,8 @@ body.dark-theme .settings-section{
   background-color: #38383894;
   color: white;
 }
-body.dark-theme .settings-section label{
+body.dark-theme .settings-section label,
+body.dark-theme .settings-container h2{
   color: white;
 }
 body.dark-theme .settings-section .checkbox{

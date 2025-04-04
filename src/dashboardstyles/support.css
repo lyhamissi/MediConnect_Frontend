@@ -93,4 +93,24 @@
     margin: 0.2rem 0;
     color: #333;
   }
-  
+  body.dark-theme .support-container,
+body.dark-theme .support-topics button
+  {
+    background-color: #181818;
+    box-shadow: 0 0 5px rgb(80, 80, 80);
+    border: 0.1rem solid white;
+    color: white;
+}
+body.dark-theme .support-title, 
+body.dark-theme .support-subtitle{
+  color:white;
+}
+body.dark-theme .support-form button{
+  background-color:#303030;
+  box-shadow: 0 0 5px rgb(80, 80, 80);
+  color: white;
+}
+body.dark-theme .support-topics button:hover,
+body.dark-theme .support-form button:hover{
+  background-color:#141414;
+}
